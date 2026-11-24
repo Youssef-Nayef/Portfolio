@@ -1,0 +1,306 @@
+/* 1. إعدادات الألوان والخطوط الأساسية */
+:root {
+    --bg-main: #0f172a;       /* كحلي غامق للخلفية */
+    --bg-card: #1e293b;       /* لون أفتح للكروت والأقسام */
+    --text-main: #f8fafc;     /* أبيض مريح للنصوص الأساسية */
+    --text-muted: #94a3b8;    /* رمادي للنصوص الفرعية */
+    --accent: #38bdf8;        /* أزرق سماوي مميز */
+    --accent-hover: #0284c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. شريط التنقل العلوي (Header & Nav) */
+header {
+    background-color: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* 3. القسم الرئيسي (Hero Section) */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.greeting {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+.bio {
+    max-width: 600px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.primary-btn {
+    background-color: var(--accent);
+    color: var(--bg-main);
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+    color: #fff;
+}
+
+.secondary-btn {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.secondary-btn:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+}
+
+/* 4. قسم نبذة عني والمهارات (About & Skills) */
+.about {
+    padding: 80px 0;
+    background-color: var(--bg-card);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+    margin-top: 8px;
+}
+
+.about-text {
+    color: var(--text-muted);
+    max-width: 750px;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    background-color: var(--bg-main);
+    color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* 5. قسم المشاريع (Projects) */
+.projects {
+    padding: 80px 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.project-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    background-color: var(--bg-main);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.project-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* 6. التذييل والتواصل (Footer) */
+.footer {
+    background-color: var(--bg-card);
+    padding: 60px 0 30px;
+    text-align: center;
+    border-top: 1px solid #334155;
+}
+
+.footer h2 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid #334155;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* 7. التجاوب مع شاشات الموبايل */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero h1 span {
+        font-size: 1.5rem;
+    }
+    .nav-links {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+}
